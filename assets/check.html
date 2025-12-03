@@ -1,0 +1,34 @@
+<!-- Ref: I haven't written html files in forever. I used premade templates available online  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Checker</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<h1>Password Strength Checker</h1>
+
+<!-- Simple form -->
+<form method="POST" action="/check">
+    <label for="password">Enter password:</label>
+    <input type="text" id="password" name="password" required>
+    <button type="submit">Check</button>
+</form>
+
+<!-- Show results if available -->
+{{if .Password}}
+<h2>Results</h2>
+<p><strong>Password:</strong> {{.Password}}</p>
+<p><strong>Strength:</strong> {{.Strength}}</p>
+
+{{if .Suggestions}}
+<p><strong>Suggestions:</strong></p>
+<ul>
+    {{range .Suggestions}}
+    <li>{{.}}</li>
+    {{end}}
+</ul>
+{{end}}
+{{end}}
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* REf: Looked up css style for this template */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Headings */
+h1 {
+    color: #333;
+}
+
+/* Forms */
+form {
+    margin-top: 15px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input, button {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+/* Navigation links */
+nav a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

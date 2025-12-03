@@ -1,0 +1,24 @@
+<!-- Ref: I haven't written html files in forever. I used premade templates available online  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<h1>Generate a Strong Password</h1>
+
+<!-- Form to choose password length -->
+<form method="POST" action="/generate">
+    <label for="length">Password length:</label>
+    <input type="number" id="length" name="length" min="8" max="32" required>
+    <button type="submit">Generate</button>
+</form>
+
+<!-- Show generated password if available -->
+{{if .Password}}
+<h2>Your New Password</h2>
+<p><strong>{{.Password}}</strong></p>
+{{end}}
+</body>
+</html>

@@ -46,11 +46,11 @@ password-checker/
 */
 
 func main() {
-	http.HandleFunc("/home", handlers.Home)
+	//http.HandleFunc("/home", handlers.Home)
 	http.HandleFunc("/check", handlers.Check)
 	http.HandleFunc("/generate", handlers.Generate)
-	http.HandleFunc("/about", handlers.About)
-	http.HandleFunc("/stats", handlers.Stats)
+	//http.HandleFunc("/about", handlers.About)
+	//http.HandleFunc("/stats", handlers.Stats)
 
 	// This tells Go's web server to look inside the "assets" folder and deliver files directly to the browser.
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
