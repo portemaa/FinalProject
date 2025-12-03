@@ -1,18 +1,13 @@
 package handlers
 
 import (
-    "html/template"
-    "net/http"
+	"net/http"
 )
 
-// can be extended if we needed logging 
-type AboutHandler struct{}
-
-func NewAboutHandler() *AboutHandler {
-    return &AboutHandler{}
-}
-
-func (h *AboutHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-    tmpl := template.Must(template.ParseFiles("assets/about.html"))
-    tmpl.Execute(w, nil)
+// About renders the about page using the shared `tmpl` initialized by `handlers.Init`.
+// this is simpler than the previous code
+func About(w http.ResponseWriter, r *http.Request) {
+	if err := tmpl.ExecuteTemplate(w, "about.html", nil); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }
