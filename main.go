@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"net/http"
 	"password-checker/handlers"
+	"password-checker/services"
 )
 
 //Revised Visual of Structure (I hope its fine I started the main, I also provided a compressed updated structure. Feel free to
@@ -46,9 +48,17 @@ password-checker/
 */
 
 func main() {
-	//http.HandleFunc("/home", handlers.Home)
+	//Had to look up, REf: go.dev to help parse all templates in asset packages
+	tmpl := template.Must(template.ParseGlob("assets/*.html"))
+	store := &services.Storage{} // created shared storage instance
+
+	// Initialize handlers with template and storage
+	handlers.Init(tmpl)
+	handlers.InitStore(store)
+
+	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/check", handlers.Check)
-	http.HandleFunc("/generate", handlers.Generate)
+	http.HandleFunc("/generate", handlers.Generate(tmpl, store))
 	//http.HandleFunc("/about", handlers.About)
 	//http.HandleFunc("/stats", handlers.Stats)
 

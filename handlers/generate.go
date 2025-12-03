@@ -6,7 +6,7 @@ import (
 	"password-checker/services"
 )
 
-func Generate(tmpl *template.Template, store *Storage) http.HandlerFunc {
+func Generate(tmpl *template.Template, store *services.Storage) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		password := services.GeneratePassword(16)
 		store.SavePassword(password)
