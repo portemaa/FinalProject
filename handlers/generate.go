@@ -3,6 +3,7 @@ package handlers
 import (
 	"html/template"
 	"net/http"
+	"password-checker/services"
 )
 
 func Generate(tmpl *template.Template, store *Storage) http.HandlerFunc {

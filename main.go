@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
-	//"password-checker/handlers"
+	"password-checker/handlers"
 )
 
 //Revised Visual of Structure (I hope its fine I started the main, I also provided a compressed updated structure. Feel free to
@@ -31,9 +31,9 @@ password-checker/
 │   └── storage.go       // Person 3: save/retrieve passwords locally (map or file)
 │
 ├── utils/               // Shared helpers/utilities
-│   ├── security.go      // Common security helpers (hashing, validation)
-│   ├── entropy.go       // Entropy calculations for password randomness
-│   └── helpers.go       // Misc helpers (string checks, reusable functions)
+│   ├── security.go      // Person 2:Common security helpers (hashing, validation)
+│   ├── evaluate.go      // Person 2:holds CheckPasswordStrength + CheckCharType helper functions
+│
 │
 └── assets/              // Merged folder: HTML templates + static files
     ├── home.html        // Person 1: template for landing page
