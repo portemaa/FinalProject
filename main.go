@@ -45,7 +45,7 @@ password-checker/
     ├── style.css        // Shared: styling for all pages
     ├── script.js        // Shared: client-side interactivity
     └── 
-
+*/
 func main() {
 	//Had to look up, REf: go.dev to help parse all templates in asset packages
 	tmpl := template.Must(template.ParseGlob("assets/*.html"))
@@ -59,7 +59,7 @@ func main() {
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/check", handlers.Check)
 	http.HandleFunc("/generate", handlers.Generate(tmpl, store))
-	//http.HandleFunc("/about", handlers.About)
+	http.HandleFunc("/about", handlers.About)
 	//http.HandleFunc("/stats", handlers.Stats)
 
 	// This tells Go's web server to look inside the "assets" folder and deliver files directly to the browser.
