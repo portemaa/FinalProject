@@ -50,7 +50,8 @@ password-checker/
 func main() {
 	//Had to look up, REf: go.dev to help parse all templates in asset packages
 	tmpl := template.Must(template.ParseGlob("assets/*.html"))
-	store := &services.Storage{} // created shared storage instance
+	// Create a shared memory storage instance
+	store := services.NewMemStorage()
 
 	// Initialize handlers with template and storage
 	handlers.Init(tmpl)

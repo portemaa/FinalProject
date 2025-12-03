@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"html/template"
 	"net/http"
 	"password-checker/services"
 )
@@ -14,12 +13,12 @@ REf: Acquired info from, Go Web Programming: Client-Server Model -> Handling For
 // It reads the password from the request, checks the strength and then suggests improvements,
 // completes the results into check.html tmeplate.
 
-var tmpl *template.Template
+//var tmpl *template.Template
 
 // Init sets the template from main.go, is a fix for earlier issues
-func Init(t *template.Template) {
+/*func Init(t *template.Template) {
 	tmpl = t
-}
+}*/
 
 // Func handles POST and GET request
 func Check(w http.ResponseWriter, r *http.Request) {

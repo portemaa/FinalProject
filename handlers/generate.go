@@ -6,13 +6,13 @@ import (
 	"password-checker/services"
 )
 
-func Generate(tmpl *template.Template, store *services.Storage) http.HandlerFunc {
+func Generate(tmpl *template.Template, store services.StorageService) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		password := services.GeneratePassword(16)
-		store.SavePassword(password)
+		pwd := "example123!" // replace with generator logic
+		store.SavePassword(pwd)
 
 		data := map[string]interface{}{
-			"Generated": password,
+			"Password": pwd,
 		}
 		// depends if we use html
 		_ = tmpl.ExecuteTemplate(w, "generate.html", data)
