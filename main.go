@@ -44,8 +44,7 @@ password-checker/
     ├── about.html       // Person 3: template for project info
     ├── style.css        // Shared: styling for all pages
     ├── script.js        // Shared: client-side interactivity
-    └── logo.png         // Shared: branding image/logo
-*/
+    └── 
 
 func main() {
 	//Had to look up, REf: go.dev to help parse all templates in asset packages
