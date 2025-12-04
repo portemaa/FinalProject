@@ -1,31 +1,88 @@
 <!-- Ref: I haven't written html files in forever. I used premade templates available online  -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Password Generator</title>
     <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        /* used youtube videos describing html strategies-Mason*/
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            align-items: center;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+
+        input[type="number"] {
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            width: 200px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #387bab;
+            color: white;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: #0a3c6c;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+            background-color: #e8f0f8;
+            border-radius: 6px;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="header-bar">
+        <h1>Navigate</h1>
+        {{template "navbar"}}
+    </div>
+    <h1>Generate a Strong Password</h1>
 
-<div class="header-bar">
-    <h1>Navigate</h1>
-    {{template "navbar"}}<!-- added navigation bar -->
-</div>
+    <form method="POST" action="/generate">
+        <label for="length">Password length:</label>
+        <input type="number" id="length" name="length" min="8" max="32" required>
+        <button type="submit">Generate</button>
+    </form>
 
-<h1>Generate a Strong Password</h1>
-
-<!-- Form to choose password length -->
-<form method="POST" action="/generate">
-    <label for="length">Password length:</label>
-    <input type="number" id="length" name="length" min="8" max="32" required>
-    <button type="submit">Generate</button>
-</form>
-
-<!-- Show generated password if available -->
-{{if .Password}}
-<h2>Your New Password</h2>
-<p><strong>{{.Password}}</strong></p>
-{{end}}
-
+    {{if .Password}}
+    <h2>Your New Password</h2>
+    <p><strong>{{.Password}}</strong></p>
+    {{end}}
 </body>
+
 </html>

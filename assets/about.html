@@ -1,19 +1,65 @@
 <!-- Ref: I haven't written html files in forever. I used premade templates available online  -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>About</title>
     <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif, sans-serif;
+            margin: 40px;
+            background: #ffffff;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #387bab;
+            font-size: 20px;
+
+            border-radius: 6px;
+
+        }
+
+        nav a:hover {
+            background: #0700cc;
+            color: rgb(235, 221, 221);
+        }
+    </style>
 </head>
+
 <body>
+    <div class="header-bar">
+        <h1>Navigate</h1>
+        {{template "navbar"}}
+    </div>
+    <h1>About This Project</h1>
 
-<div class="header-bar">
-    <h1>Navigate</h1>
-    {{template "navbar"}}
-</div>
+    <p>This app checks passwords, gives tips on passwords, and makes new ones.</p>
 
-<h1>About This Project</h1>
-<p>This app checks passwords, gives improvement tips, and can generate strong passwords.</p>
-
+    <nav>
+        <a href="/home">Home</a> |
+        <a href="/check">Check</a> |
+        <a href="/generate">Generate</a> |
+        <a href="/stats">Stats</a>
+    </nav>
 </body>
+
 </html>
