@@ -45,9 +45,7 @@ password-checker/
     ├── script.js        // Client-side interactivity
     └── navbar.html      // Shared navigation bar across pages
 
-*/
-│
-*/
+
 func main() {
 	//Had to look up, REf: go.dev to help parse all templates in asset packages
 	tmpl := template.Must(template.ParseGlob("assets/*.html"))
