@@ -16,6 +16,37 @@ import (
 
 password-checker/
 │
+├── main.go              // Entry point: starts server, wires routes to handlers
+│
+├── handlers/            // HTTP endpoints (controllers)
+│   ├── home.go          // Landing page
+│   ├── check.go         // Password input form, calls strength + improvement services
+│   ├── generate.go      // Endpoint to generate random strong password
+│   ├── about.go         // Endpoint to show project info
+│   ├── stats.go         // Endpoint to show user statistics
+│   └── init.go          // Initializes shared template and storage
+│
+├── services/            // Business logic (service layer)
+│   ├── generator.go     // Logic for generating random strong passwords
+│   ├── improve.go       // Suggest improvements for Weak/Moderate passwords
+│   ├── strength.go      // Analyze password strength
+│   └── storage.go       // Save/retrieve passwords locally (map with mutex)
+│
+├── utils/               // Shared helpers/utilities
+│   ├── evaluator.go     // Holds CheckPasswordStrength + CheckCharType helper functions
+│   └── security.go      // Common security helpers (hashing, validation)
+│
+└── assets/              // HTML templates + static files
+    ├── home.html        // Template for landing page
+    ├── check.html       // Template for password input + feedback
+    ├── generate.html    // Template for password generator
+    ├── about.html       // Template for project info
+    ├── style.css        // Styling for all pages
+    ├── script.js        // Client-side interactivity
+    └── navbar.html      // Shared navigation bar across pages
+
+*/
+│
 */
 func main() {
 	//Had to look up, REf: go.dev to help parse all templates in asset packages
