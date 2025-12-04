@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+
+<div class="header-bar">
+    <h1>Navigate</h1>
+    {{template "navbar"}}<!-- added navigation bar -->
+</div>
+
 <h1>Generate a Strong Password</h1>
 
 <!-- Form to choose password length -->
@@ -20,5 +26,6 @@
 <h2>Your New Password</h2>
 <p><strong>{{.Password}}</strong></p>
 {{end}}
+
 </body>
 </html>

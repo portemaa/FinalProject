@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About</title>
+    <title>Password Stats</title>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -12,8 +12,20 @@
     {{template "navbar"}}
 </div>
 
-<h1>About This Project</h1>
-<p>This app checks passwords, gives improvement tips, and can generate strong passwords.</p>
+<h1>Password Submission Stats</h1>
+
+{{if .Passwords}}
+<ul>
+    {{range .Passwords}}
+    <li>{{.}}</li>
+    {{end}}
+</ul>
+
+<p><strong>Total Submitted:</strong> {{.PasswordCount}}</p>
+
+{{else}}
+<p>No stats available yet.</p>
+{{end}}
 
 </body>
 </html>

@@ -1,10 +1,13 @@
 package handlers
 
-import (
-	"net/http"
-)
+import "net/http"
 
-// Func serves as the main page
+// Func is the handler for the root URL ("/")
+// (Version 2) home.html renders through the same template as the other pages,
+//so {{template "navbar"}} (added to all templates) works consistently everywhere
+
 func Home(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "assets/home.html")
+	if err := tmpl.ExecuteTemplate(w, "home.html", nil); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
 }

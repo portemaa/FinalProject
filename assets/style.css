@@ -1,16 +1,66 @@
 /* REf: Looked up css style for this template */
+/* Global body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background-color: #f9f9f9;
 }
 
-/* Headings */
+/*
+   HEADER BAR (TITLE LEFT, NAV RIGHT)
+    */
+.header-bar {
+    display: flex;
+    justify-content: space-between;   /* TITLE LEFT, NAV RIGHT */
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Title inside the header bar */
+.header-bar h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+/*
+   NAVBAR STYLING
+ */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;     /* space between buttons */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 14px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+/*
+TEXT, FORMS, AND ELEMENTS
+   */
 h1 {
     color: #333;
 }
 
-/* Forms */
 form {
     margin-top: 15px;
 }
@@ -19,18 +69,8 @@ label {
     margin-right: 10px;
 }
 
-input, button {
+input,
+button {
     padding: 5px;
     margin: 5px 0;
-}
-
-/* Navigation links */
-nav a {
-    margin: 0 5px;
-    text-decoration: none;
-    color: #0066cc;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
